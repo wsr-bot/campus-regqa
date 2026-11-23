@@ -1,0 +1,29 @@
+# 虚拟环境与运行产物
+.venv/
+__pycache__/
+*.pyc
+
+# 数据库与索引（可重建，不入库）
+data/app.db
+data/app.db-*
+data/chroma/
+data/exports/
+
+# 原始文件与 OCR 结果（体积大，且可能有版权，不入库）
+data/raw/*.pdf
+data/raw/*.txt
+
+# 评测中间产物
+data/processed/
+reports/
+
+# 密钥绝不入库
+.env
+*.key
+
+# 设计文档与内部工作记录：不随仓库公开
+02-design/
+_回退/
+
+# 临时上传目录，不纳入版本控制
+传输/
