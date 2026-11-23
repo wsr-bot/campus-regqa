@@ -1,0 +1,13 @@
+# 毕业学分要求
+#
+# ⚠️ 各专业培养方案差异很大，这里不预填任何数字。
+#    留空时：T1 只按调用方传入的 requirements 计算；若调用方也没传，则返回空缺口。
+#
+# 填写示例（照你所在专业的培养方案填）：
+# modules:
+#   - {module: 必修, required_credits: 0}
+#   - {module: 选修, required_credits: 0}
+#   - {module: 通识, required_credits: 0}
+#   - {module: 实践, required_credits: 0}
+
+modules: []

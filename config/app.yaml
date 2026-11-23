@@ -1,0 +1,48 @@
+# 全部可调参数集中于此，代码内不出现魔法数字
+llm:
+  tiers:
+    strong:
+      chain:
+        - {provider: anthropic, model: claude-sonnet-4-5, timeout_s: 60, max_retry: 3}
+        - {provider: deepseek, model: deepseek-chat, timeout_s: 60, max_retry: 2}
+        - {provider: qwen, model: qwen-plus, timeout_s: 60, max_retry: 2}
+    fast:
+      chain:
+        - {provider: qwen, model: qwen-plus, timeout_s: 30, max_retry: 2}
+        - {provider: deepseek, model: deepseek-chat, timeout_s: 30, max_retry: 1}
+  judge: {provider: qwen, model: qwen-max, temperature: 0.0}
+
+embedding:
+  active: dashscope
+  dashscope: {model: text-embedding-v3, dim: 1024, batch_size: 10}
+
+retrieval:
+  top_k: 20
+  rerank_keep: 5
+  force_keep_topn: 3
+  min_score: 0.55
+  per_file_cap: 3
+  year_filter_default: current
+
+budget:
+  max_turns: 4
+  max_input_tokens: 6500
+  max_output_tokens: 800
+  wall_clock_s: 15
+  node_timeout_s: {llm: 60, tool: 5, retrieve: 3}
+
+cache:
+  backend: memory
+  memory_max_items: 200
+  answer_cache_enabled: false
+  redis_url: "redis://127.0.0.1:6379/0"
+
+server:
+  host: 0.0.0.0
+  port: 8000
+  db_path: ./data/app.db
+  chroma_dir: ./data/chroma
+  exports_dir: ./data/exports
+  rate_limit:
+    per_ip_per_min: 10
+    per_session_per_min: 6

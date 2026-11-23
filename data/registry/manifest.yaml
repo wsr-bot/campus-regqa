@@ -1,0 +1,38 @@
+# 文件登记表（年份溯源的地基）
+#
+# 每收录一份文件就在这里登记一行，然后执行：
+#   python -m app.ingest.run_ingest --doc-id <doc_id>
+#
+# 字段说明：
+#   doc_id         唯一标识，建议 slug_年份，如 xueji_2021
+#   title          文件全名（会显示在引用卡片上）
+#   title_key      去掉年份/「修订」等版本噪声后的比较键，用于校验"同一规定只能有一份现行版"
+#   effective_year 生效年份（引用标签来源，必填）
+#   file_type      学籍管理 / 考试管理 / 选课 / 毕业审核 / 证明办理 / 培养方案 / 其他
+#   file_path      相对项目根的路径，默认 data/raw/<doc_id>.pdf
+#   supersedes     被本文件替代的旧文件 doc_id（写了它，旧版会自动标为非现行）
+#
+# 注意：本文件初始为空。请用学校教务处公开文件填写，不要填示例假数据——
+#      一旦登记了不存在的文件，入库会报错，比留空更麻烦。
+
+documents: []
+
+# 填写示例（照抄格式后改成真实信息）：
+#
+# documents:
+#   - doc_id: xueji_2021
+#     title: XX大学学生学籍管理规定（2021年修订）
+#     title_key: 学生学籍管理规定
+#     doc_no: 校教〔2021〕XX号
+#     publisher: 教务处
+#     publish_date: 2021-09-01
+#     effective_year: 2021
+#     file_type: 学籍管理
+#     file_path: data/raw/xueji_2021.pdf
+#   - doc_id: xueji_2018
+#     title: XX大学学生学籍管理规定（2018年修订）
+#     title_key: 学生学籍管理规定
+#     effective_year: 2018
+#     file_type: 学籍管理
+#     file_path: data/raw/xueji_2018.pdf
+#     # 2021 版在 supersedes 里指向本文件，所以本文件自动成为非现行版

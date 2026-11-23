@@ -1,0 +1,18 @@
+# 办理窗口与时间
+#
+# ⚠️ 本文件刻意留空。地点、电话、办公时间属于对外事实，必须由使用者
+#    从本校教务处公开页面核对后填写，不得凭空生成。
+#
+# 填写示例（核对后再启用）：
+# matters:
+#   重修申请:
+#     - name: 教务处学籍科
+#       location: XX楼 1 层 105
+#       open_hours: 周一至周五 08:30-11:30, 14:30-17:00
+#       phone: "0XXX-XXXXXXX"
+#       appointment_required: false
+#       source_doc_ids: [xueji_2021]
+#
+# 留空时：T4 返回 found=false，系统回答"未查到具体窗口，请咨询学院教务办"。
+
+matters: {}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>校园教务规章问答</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<header class="top">
+  <h1>校园教务规章问答</h1>
+  <p class="sub">答案一律注明出处条款；算分、清单、窗口由程序计算；文件里没写的，直接说没查到。</p>
+  <div class="status" id="kb-status">知识库状态加载中…</div>
+</header>
+
+<main>
+  <section class="ask">
+    <textarea id="question" rows="3" placeholder="例如：必修还差 4 学分，绩点够不够毕业？"></textarea>
+    <div class="ask-bar">
+      <button id="send">提问</button>
+      <button id="cancel" hidden>停止</button>
+      <span class="hint" id="hint"></span>
+    </div>
+    <div class="examples">
+      <span>试试：</span>
+      <button class="chip" data-q="重修不及格的课程，成绩单上怎么记？">重修成绩怎么记</button>
+      <button class="chip" data-q="办在读证明要带什么材料？">在读证明材料</button>
+      <button class="chip" data-q="我还差多少学分才能毕业？">学分缺口</button>
+    </div>
+  </section>
+
+  <section class="flow" id="flow" hidden></section>
+
+  <section class="answer" id="answer-box" hidden>
+    <div class="answer-head">
+      <span id="answer-tag" class="tag"></span>
+      <span class="meta" id="answer-meta"></span>
+    </div>
+    <div class="answer-body" id="answer-body"></div>
+    <div class="guidance" id="guidance" hidden></div>
+  </section>
+
+  <section class="citations" id="citations" hidden>
+    <h2>依据条款</h2>
+    <ol id="citation-list"></ol>
+  </section>
+</main>
+
+<footer>
+  <span>仅收录公开教务文件；回答不构成官方解释，最终以教务处口径为准。</span>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>

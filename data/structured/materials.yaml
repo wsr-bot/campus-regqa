@@ -1,0 +1,47 @@
+# 办事材料清单
+#
+# ⚠️ 事实性字段（材料份数、盖章要求、地点、电话）必须用本校真实文件核对后填写。
+#    本文件初始只放通用项，window 一律留空——系统查不到时会如实回答"未查到"，
+#    不会编造地点与电话。填入真实信息后，T3/T4 工具才会给出具体窗口。
+#
+# 结构：matters.<事项类型> = {items: [...], window: {...}|null, notes: [...]}
+
+matters:
+  重修申请:
+    items:
+      - {name: 重修申请表, copies: 1, source: 学院教务办领取, template: null}
+      - {name: 学生证, copies: 1, source: 本人, template: null}
+    window: null
+    notes:
+      - 份数与盖章要求以学院当期通知为准，本系统未收录该项细则。
+
+  成绩证明:
+    items:
+      - {name: 成绩单申请单, copies: 1, source: 教务处或自助打印机, template: null}
+      - {name: 学生证或校园卡, copies: 1, source: 本人, template: null}
+    window: null
+    notes:
+      - 中英文版本所需材料可能不同，请以窗口要求为准。
+
+  在读证明:
+    items:
+      - {name: 在读证明申请单, copies: 1, source: 学院教务办, template: null}
+      - {name: 学生证, copies: 1, source: 本人, template: null}
+    window: null
+    notes: []
+
+  毕业审核:
+    items:
+      - {name: 毕业资格审核表, copies: 1, source: 学院教务办, template: null}
+      - {name: 培养方案完成情况核对表, copies: 1, source: 学院教务办, template: null}
+    window: null
+    notes:
+      - 审核以培养方案与成绩单为准，具体口径见《学籍管理规定》。
+
+  学籍异动:
+    items:
+      - {name: 学籍异动申请表, copies: 1, source: 学院教务办, template: null}
+      - {name: 相关证明材料, copies: 1, source: 按异动类型提供, template: null}
+    window: null
+    notes:
+      - 不同类型（休学/复学/退学/转专业）材料差异较大，请先咨询学院。
